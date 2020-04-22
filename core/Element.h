@@ -43,7 +43,7 @@ typedef NS_ENUM(NSUInteger, ObjCUIElementType) {
 /// set new static props
 - (ObjCUIElement *(^)(id))props;
 
-- (ObjCUIElement *(^)(ObjCUIStyleType *))styles;
+- (ObjCUIElement *(^)(ObjCUIStyleType *))layouts;
 
 /// set new dynamic props
 //- (ObjCUIElement *(^)(NSDictionary *(^)(void)))propsBuilder;

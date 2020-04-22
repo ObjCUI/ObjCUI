@@ -95,7 +95,7 @@
     };
 }
 
-- (ObjCUIElement * _Nonnull (^)(ObjCUIStyleType * _Nonnull))styles {
+- (ObjCUIElement * _Nonnull (^)(ObjCUIStyleType * _Nonnull))layouts {
     return ^ObjCUIElement * (ObjCUIStyleType * style) {
         self.style = style;
         return self;
