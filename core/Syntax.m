@@ -15,13 +15,13 @@
 #import <objc/message.h>
 #import <objc/runtime.h>
 
-@interface ObjCUIStyleType ()
+@interface ObjCUILayout ()
 
 @property (nonatomic, strong) NSMutableDictionary *changes;
 
 @end
 
-@implementation ObjCUIStyleType
+@implementation ObjCUILayout
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -122,14 +122,14 @@ OBJCUI_IMP_YOGA_PROPERTY(CGFloat, AspectRatio, aspectRatio)
     if (self == object) {
         return YES;
     }
-    return [self.changes isEqualToDictionary:[(ObjCUIStyleType *)object changes]];
+    return [self.changes isEqualToDictionary:[(ObjCUILayout *)object changes]];
 }
 
 @end
 
 
-ObjCUIStyleType* ObjCUIStyleBuilder(void(^builder)(ObjCUIStyleType * style)) {
-    ObjCUIStyleType *style = ObjCUIStyleType.new;
+ObjCUILayout* ObjCUILayoutBuilder(void(^builder)(ObjCUILayout * style)) {
+    ObjCUILayout *style = ObjCUILayout.new;
     builder(style);
     return style;
 }

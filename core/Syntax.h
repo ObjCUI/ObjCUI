@@ -50,7 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
-@interface ObjCUIStyleType : NSObject
+@interface ObjCUILayout : NSObject
 
 @property (nonatomic, assign) YGDirection direction;
 @property (nonatomic, assign) YGFlexDirection flexDirection;
@@ -115,9 +115,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-extern ObjCUIStyleType* ObjCUIStyleBuilder(void(^builder)(ObjCUIStyleType *style));
+extern ObjCUILayout* ObjCUILayoutBuilder(void(^builder)(ObjCUILayout *style));
 
-#define OBJCUI_STYLE_DEFINE_PROPERTY(property_name) @property (nonatomic, readonly) ObjCUIStyleType* property_name;
+#define OBJCUI_STYLE_DEFINE_PROPERTY(property_name) @property (nonatomic, readonly) ObjCUILayout* property_name;
 
 
 

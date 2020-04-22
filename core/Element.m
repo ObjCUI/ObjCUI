@@ -17,7 +17,7 @@
 
 @property (nonatomic, strong) id properties;
 
-@property (nonatomic, strong) ObjCUIStyleType *style;
+@property (nonatomic, strong) ObjCUILayout *style;
 
 @property (nonatomic, strong) NSArray<ObjCUIElement *> *children;
 
@@ -95,8 +95,8 @@
     };
 }
 
-- (ObjCUIElement * _Nonnull (^)(ObjCUIStyleType * _Nonnull))layouts {
-    return ^ObjCUIElement * (ObjCUIStyleType * style) {
+- (ObjCUIElement * _Nonnull (^)(ObjCUILayout * _Nonnull))layouts {
+    return ^ObjCUIElement * (ObjCUILayout * style) {
         self.style = style;
         return self;
     };

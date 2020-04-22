@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface ObjCUIStyleType ()
+@interface ObjCUILayout ()
 
 - (void)updateWithView:(UIView *)view;
 
