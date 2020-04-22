@@ -128,7 +128,7 @@ OBJCUI_IMP_YOGA_PROPERTY(CGFloat, AspectRatio, aspectRatio)
 @end
 
 
-ObjCUIStyleType* ObjCUIStyleBuilder(void(^builder)(ObjCUIStyleType *)) {
+ObjCUIStyleType* ObjCUIStyleBuilder(void(^builder)(ObjCUIStyleType * style)) {
     ObjCUIStyleType *style = ObjCUIStyleType.new;
     builder(style);
     return style;

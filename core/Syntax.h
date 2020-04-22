@@ -108,7 +108,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-extern ObjCUIStyleType* ObjCUIStyleBuilder(void(^builder)(ObjCUIStyleType *));
+extern ObjCUIStyleType* ObjCUIStyleBuilder(void(^builder)(ObjCUIStyleType *style));
+
+#define OBJCUI_STYLE_DEFINE_PROPERTY(property_name) @property (nonatomic, readonly) ObjCUIStyleType* property_name;
 
 
 NS_ASSUME_NONNULL_END
