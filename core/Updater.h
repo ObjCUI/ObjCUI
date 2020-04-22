@@ -9,20 +9,20 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@class ObjcUIContainer;
+@class ObjCUIContainer;
 
-typedef NS_ENUM(NSUInteger, ObjcUIPatchType) {
-    ObjcUIPatchTypeReplace,
-    ObjcUIPatchTypeReorder,
-    ObjcUIPatchTypeProps,
-//    ObjcUIPatch
+typedef NS_ENUM(NSUInteger, ObjCUIPatchType) {
+    ObjCUIPatchTypeReplace,
+    ObjCUIPatchTypeReorder,
+    ObjCUIPatchTypeProps,
+//    ObjCUIPatch
 };
 
-@interface ObjcUIUpdater : NSObject
+@interface ObjCUIUpdater : NSObject
 
 + (instancetype)shared;
 
-- (void)scheduleContainer:(ObjcUIContainer *)container;
+- (void)scheduleContainer:(ObjCUIContainer *)container;
 
 @end
 

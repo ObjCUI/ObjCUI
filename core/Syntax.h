@@ -42,6 +42,13 @@
 NS_ASSUME_NONNULL_BEGIN
 @class ObjCUIElement;
 
+@protocol ObjCUIViewPropsReceiver <NSObject>
+
+@required
+- (void)objcui_updateWithProps:(id)props;
+
+@end
+
 
 @interface ObjCUIStyleType : NSObject
 
@@ -111,6 +118,7 @@ NS_ASSUME_NONNULL_BEGIN
 extern ObjCUIStyleType* ObjCUIStyleBuilder(void(^builder)(ObjCUIStyleType *style));
 
 #define OBJCUI_STYLE_DEFINE_PROPERTY(property_name) @property (nonatomic, readonly) ObjCUIStyleType* property_name;
+
 
 
 NS_ASSUME_NONNULL_END

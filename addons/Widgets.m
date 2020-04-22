@@ -57,7 +57,7 @@ OBJCUI_IMP_SINGLECHILD_ELEMENT(ObjCUIImageView, ImageView);
 @end
 
 const char k_objcui_view_tap;
-@implementation UIView (ObjcUIWidget)
+@implementation UIView (ObjCUIWidget)
 
 - (void)objcui_widgetSetCommonProps:(ObjCUIViewProp *)props {
     if (props.backgroundColor != nil) {
@@ -131,9 +131,9 @@ const char k_objcui_button_onclick;
 }
 
 - (void)objcui_onclick {
-    void(^clickListener)(void) = objc_getAssociatedObject(self, &k_objcui_button_onclick);
+    void(^clickListener)(UIButton *) = objc_getAssociatedObject(self, &k_objcui_button_onclick);
     if (clickListener) {
-        clickListener();
+        clickListener(self);
     }
 }
 

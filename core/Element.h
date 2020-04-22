@@ -12,11 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class ObjCUIComponent, ObjCUIStyleType;
 
-typedef NS_ENUM(NSUInteger, ObjcUIElementType) {
+typedef NS_ENUM(NSUInteger, ObjCUIElementType) {
     // raw type means element directly points to a UIView
-    ObjcUIElementTypeRaw,
-    // component type means element points to a ObjcUIComponent
-    ObjcUIElementTypeComponent,
+    ObjCUIElementTypeRaw,
+    // component type means element points to a ObjCUIComponent
+    ObjCUIElementTypeComponent,
 };
 
 @interface ObjCUIElement : NSObject
@@ -29,7 +29,7 @@ typedef NS_ENUM(NSUInteger, ObjcUIElementType) {
 
 @property (nonatomic, readonly) NSArray<ObjCUIElement *> *children;
 
-@property (nonatomic, readonly, assign) ObjcUIElementType elementType;
+@property (nonatomic, readonly, assign) ObjCUIElementType elementType;
 
 @property (nonatomic, readonly, strong) ObjCUIComponent *component;
 
@@ -46,7 +46,7 @@ typedef NS_ENUM(NSUInteger, ObjcUIElementType) {
 - (ObjCUIElement *(^)(ObjCUIStyleType *))styles;
 
 /// set new dynamic props
-//- (ObjcUIElement *(^)(NSDictionary *(^)(void)))propsBuilder;
+//- (ObjCUIElement *(^)(NSDictionary *(^)(void)))propsBuilder;
 
 @end
 

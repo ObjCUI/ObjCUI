@@ -11,13 +11,6 @@
 NS_ASSUME_NONNULL_BEGIN
 @class ObjCUIElement;
 
-@protocol ObjcUIViewPropsReceiver <NSObject>
-
-@required
-- (void)objcui_updateWithProps:(id)props;
-
-@end
-
 
 // ====================== View =================
 OBJCUI_DECLARE_SINGLECHILD_ELEMENT(View);
@@ -39,7 +32,7 @@ OBJCUI_DECLARE_MULTICHILD_ELEMENT(View);
 
 @end
 
-@interface ObjCUIView : UIView<ObjcUIViewPropsReceiver>
+@interface ObjCUIView : UIView<ObjCUIViewPropsReceiver>
 
 @end
 
@@ -55,7 +48,7 @@ OBJCUI_DECLARE_MULTICHILD_ELEMENT(View);
 @end
 
 OBJCUI_DECLARE_SINGLECHILD_ELEMENT(Label);
-@interface ObjCUILabel : UILabel<ObjcUIViewPropsReceiver>
+@interface ObjCUILabel : UILabel<ObjCUIViewPropsReceiver>
 
 @end
 
@@ -67,7 +60,7 @@ OBJCUI_DECLARE_SINGLECHILD_ELEMENT(Label);
 @end
 
 OBJCUI_DECLARE_SINGLECHILD_ELEMENT(ImageView);
-@interface ObjCUIImageView : UIImageView<ObjcUIViewPropsReceiver>
+@interface ObjCUIImageView : UIImageView<ObjCUIViewPropsReceiver>
 
 @end
 
@@ -88,16 +81,16 @@ OBJCUI_DECLARE_SINGLECHILD_ELEMENT(ImageView);
 @property (nonatomic, copy) NSValue *titleEdgeInsets;
 @property (nonatomic, copy) NSValue *imageEdgeInsets;
 
-@property (nonatomic, copy) void(^onClick)(void);
+@property (nonatomic, copy) void(^onClick)(UIButton *button);
 
 @end
 
 OBJCUI_DECLARE_SINGLECHILD_ELEMENT(Button);
-@interface ObjCUIButton : UIButton<ObjcUIViewPropsReceiver>
+@interface ObjCUIButton : UIButton<ObjCUIViewPropsReceiver>
 
 @end
 
-@interface UIView (ObjcUIWidget)
+@interface UIView (ObjCUIWidget)
 
 - (void)objcui_widgetSetCommonProps:(__kindof ObjCUIViewProp *)props;
 

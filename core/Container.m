@@ -14,16 +14,16 @@
 #import <YogaKit/UIView+Yoga.h>
 
 typedef struct {
-    ObjcUIPatchType type;
+    ObjCUIPatchType type;
     ObjCUIElement *node;
     NSDictionary *props;
-} ObjcUIPatch;
+} ObjCUIPatch;
 
-NSMutableDictionary *ObjcUIDiff(ObjCUIElement *oldTree, ObjCUIElement *newTree);
+NSMutableDictionary *ObjCUIDiff(ObjCUIElement *oldTree, ObjCUIElement *newTree);
 void dfsWalk(ObjCUIElement *oldTree, ObjCUIElement *newTree, NSUInteger *index, NSMutableDictionary *patches);
 void diffChildren(NSArray<ObjCUIElement *> *oldChildren, NSArray<ObjCUIElement *> *newChildren, NSUInteger *index, NSMutableDictionary *patches);
 
-@interface ObjcUIContainer ()
+@interface ObjCUIContainer ()
 
 @property (nonatomic, strong) ObjCUIElement *rootElement;
 
@@ -33,7 +33,7 @@ void diffChildren(NSArray<ObjCUIElement *> *oldChildren, NSArray<ObjCUIElement *
 @end
 
 const char k_objcui_container_associate;
-@implementation ObjcUIContainer
+@implementation ObjCUIContainer
 
 @synthesize uniqueId=_uniqueId;
 
@@ -70,13 +70,13 @@ const char k_objcui_container_associate;
 }
 
 - (void)setNeedsRender {
-    [ObjcUIUpdater.shared scheduleContainer:self];
+    [ObjCUIUpdater.shared scheduleContainer:self];
 }
 
 @end
 
 
-NSMutableDictionary *ObjcUIDiff(ObjCUIElement *oldTree, ObjCUIElement *newTree) {
+NSMutableDictionary *ObjCUIDiff(ObjCUIElement *oldTree, ObjCUIElement *newTree) {
     NSMutableDictionary *patches = NSMutableDictionary.new;
     NSUInteger index = 0;
     dfsWalk(oldTree, newTree, &index, patches);

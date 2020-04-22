@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class ObjCUIElement;
 
-@interface ObjcUIContainer : NSObject
+@interface ObjCUIContainer : NSObject
 
 @property (nonatomic, readonly) NSString *uniqueId;
 

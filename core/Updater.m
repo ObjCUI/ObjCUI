@@ -9,7 +9,7 @@
 #import "Updater.h"
 #import "Container.h"
 
-@interface ObjcUIUpdater ()
+@interface ObjCUIUpdater ()
 
 @property (nonatomic, strong) CADisplayLink *vsync;
 
@@ -17,13 +17,13 @@
 
 @end
 
-@implementation ObjcUIUpdater
+@implementation ObjCUIUpdater
 
 + (instancetype)shared {
     static dispatch_once_t onceToken;
-    static ObjcUIUpdater *updater;
+    static ObjCUIUpdater *updater;
     dispatch_once(&onceToken, ^{
-        updater = [ObjcUIUpdater new];
+        updater = [ObjCUIUpdater new];
         updater.vsync = [CADisplayLink displayLinkWithTarget:updater selector:@selector(onVsyncCallback)];
         updater.vsync.paused = YES;
         [updater.vsync addToRunLoop:NSRunLoop.mainRunLoop forMode:NSRunLoopCommonModes];
@@ -33,14 +33,14 @@
 
 - (void)onVsyncCallback {
     [[[self.scheduleQueue objectEnumerator] allObjects]
-     enumerateObjectsUsingBlock:^(ObjcUIContainer *obj, NSUInteger idx, BOOL *stop) {
+     enumerateObjectsUsingBlock:^(ObjCUIContainer *obj, NSUInteger idx, BOOL *stop) {
         [obj update];
     }];
     [self.scheduleQueue removeAllObjects];
     self.vsync.paused = YES;
 }
 
-- (void)scheduleContainer:(ObjcUIContainer *)container {
+- (void)scheduleContainer:(ObjCUIContainer *)container {
     [self.scheduleQueue setObject:container forKey:container.uniqueId];
     self.vsync.paused = NO;
 }

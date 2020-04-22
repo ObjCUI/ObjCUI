@@ -21,7 +21,7 @@
 
 @property (nonatomic, strong) NSArray<ObjCUIElement *> *children;
 
-@property (nonatomic, assign) ObjcUIElementType elementType;
+@property (nonatomic, assign) ObjCUIElementType elementType;
 
 @end
 
@@ -37,13 +37,13 @@
     NSParameterAssert(![className isSubclassOfClass:UIView.class] || ![className isSubclassOfClass:ObjCUIComponent.class]);
     ObjCUIElement *ele = [ObjCUIElement new];
     ele.className = className;
-    ele.elementType = [className isSubclassOfClass:ObjCUIComponent.class] ? ObjcUIElementTypeComponent : ObjcUIElementTypeRaw;
+    ele.elementType = [className isSubclassOfClass:ObjCUIComponent.class] ? ObjCUIElementTypeComponent : ObjCUIElementTypeRaw;
     ele.children = children;
     return ele;
 }
 
 - (ObjCUIComponent *)component {
-    if (self.elementType == ObjcUIElementTypeRaw) {
+    if (self.elementType == ObjCUIElementTypeRaw) {
         return nil;
     }
     if (!_component) {
@@ -57,7 +57,7 @@
 @synthesize holdElement = _holdElement;
 - (ObjCUIElement *)holdElement {
     // when type == raw, holdElement is itself
-    if (self.elementType == ObjcUIElementTypeRaw) {
+    if (self.elementType == ObjCUIElementTypeRaw) {
         return self;
     }
     if (!_holdElement) {
@@ -75,7 +75,7 @@
 
 // completely rerender
 - (UIView *)render {
-    if (self.elementType == ObjcUIElementTypeRaw) {
+    if (self.elementType == ObjCUIElementTypeRaw) {
         UIView *view = [[self.className alloc] init];
         view.objcui_element = self;
         [self.children enumerateObjectsUsingBlock:^(ObjCUIElement * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -103,7 +103,7 @@
 }
 
 
-- (void)setContainer:(ObjcUIContainer *)container {
+- (void)setContainer:(ObjCUIContainer *)container {
     _container = container;
     [self.children makeObjectsPerformSelector:@selector(setContainer:) withObject:container];
 }

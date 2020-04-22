@@ -22,7 +22,7 @@
 }
 
 + (id)mountComponent:(__kindof ObjCUIElement *)element onView:(__kindof UIView *)rootView {
-    return [ObjcUIContainer.alloc initWithRootElement:element mountPoint:rootView];
+    return [ObjCUIContainer.alloc initWithRootElement:element mountPoint:rootView];
 }
 
 @end

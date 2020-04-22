@@ -12,9 +12,9 @@
 #import "Syntax.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@class ObjCUIElement, ObjcUIContainer;
+@class ObjCUIElement, ObjCUIContainer;
 
-@interface UIView (ObjcUI)
+@interface UIView (ObjCUI)
 
 @property (nonatomic, strong, readwrite) ObjCUIElement *objcui_element;
 
@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ObjCUIElement ()
 
-@property (nonatomic, weak) ObjcUIContainer *container;
+@property (nonatomic, weak) ObjCUIContainer *container;
 
 /// actual element node when element is stateful
 @property (nonatomic, strong) ObjCUIElement *holdElement;

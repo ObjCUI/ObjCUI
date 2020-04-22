@@ -12,7 +12,7 @@
 #import <objc/runtime.h>
 #import <YogaKit/UIView+Yoga.h>
 
-@implementation UIView (ObjcUI)
+@implementation UIView (ObjCUI)
 
 const char k_element;
 - (ObjCUIElement *)objcui_element {
@@ -22,9 +22,9 @@ const char k_element;
 - (void)setObjcui_element:(ObjCUIElement *)objcui_element {
     objc_setAssociatedObject(self, &k_element, objcui_element, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     // update properties with split protocol
-    if ([self conformsToProtocol:@protocol(ObjcUIViewPropsReceiver)] &&
+    if ([self conformsToProtocol:@protocol(ObjCUIViewPropsReceiver)] &&
         [self respondsToSelector:@selector(objcui_updateWithProps:)]) {
-        [(id<ObjcUIViewPropsReceiver>)self objcui_updateWithProps:objcui_element.properties];
+        [(id<ObjCUIViewPropsReceiver>)self objcui_updateWithProps:objcui_element.properties];
     }
     // update style
     self.yoga.isEnabled = YES;
