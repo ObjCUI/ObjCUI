@@ -22,9 +22,19 @@ Pod::Spec.new do |s|
   s.author = { "stephenwzl" => "stephenwzlwork@gmail.com" }
   s.platform = :ios, "9.0"
   s.source = { :git => "https://github.com/ObjCUI/ObjCUI.git", :tag => s.version.to_s}
-  s.source_files = 'Sources/**/*.{h,m}'
-  s.dependency 'YogaKit'
 
+  s.subspec 'core' do |core|
+    core.source_files = 'core/**/*.{h,m}'
+  end
+
+  s.subspec 'addons' do |addons|
+    addons.source_files = 'addons/**/*.{h.m}'
+    addons.dependency 'ObjCUI/core'
+  end
+
+  s.default_subspec = 'core'
+
+  s.dependency 'YogaKit'
 
   s.description  = <<-DESC
   Objective-C declarative / data-driven UI framework
@@ -32,6 +42,5 @@ Pod::Spec.new do |s|
 
 
   s.license      = "MIT"
-
 
 end
