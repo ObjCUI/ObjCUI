@@ -32,7 +32,7 @@ OBJCUI_DECLARE_MULTICHILD_ELEMENT(View);
 
 @end
 
-@interface ObjCUIView : UIView<ObjCUIViewPropsReceiver>
+@interface ObjCUIView : UIView<ObjCUIWidgetPropsReceiver>
 
 @end
 
@@ -48,7 +48,7 @@ OBJCUI_DECLARE_MULTICHILD_ELEMENT(View);
 @end
 
 OBJCUI_DECLARE_SINGLECHILD_ELEMENT(Label);
-@interface ObjCUILabel : UILabel<ObjCUIViewPropsReceiver>
+@interface ObjCUILabel : UILabel<ObjCUIWidgetPropsReceiver>
 
 @end
 
@@ -60,7 +60,7 @@ OBJCUI_DECLARE_SINGLECHILD_ELEMENT(Label);
 @end
 
 OBJCUI_DECLARE_SINGLECHILD_ELEMENT(ImageView);
-@interface ObjCUIImageView : UIImageView<ObjCUIViewPropsReceiver>
+@interface ObjCUIImageView : UIImageView<ObjCUIWidgetPropsReceiver>
 
 @end
 
@@ -86,7 +86,7 @@ OBJCUI_DECLARE_SINGLECHILD_ELEMENT(ImageView);
 @end
 
 OBJCUI_DECLARE_SINGLECHILD_ELEMENT(Button);
-@interface ObjCUIButton : UIButton<ObjCUIViewPropsReceiver>
+@interface ObjCUIButton : UIButton<ObjCUIWidgetPropsReceiver>
 
 @end
 

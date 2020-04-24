@@ -42,7 +42,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @class ObjCUIElement;
 
-@protocol ObjCUIViewPropsReceiver <NSObject>
+@protocol ObjCUIWidgetPropsReceiver <NSObject>
 
 @required
 - (void)objcui_updateWithProps:(id)props;

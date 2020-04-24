@@ -22,9 +22,9 @@ const char k_element;
 - (void)setObjcui_element:(ObjCUIElement *)objcui_element {
     objc_setAssociatedObject(self, &k_element, objcui_element, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     // update properties with split protocol
-    if ([self conformsToProtocol:@protocol(ObjCUIViewPropsReceiver)] &&
+    if ([self conformsToProtocol:@protocol(ObjCUIWidgetPropsReceiver)] &&
         [self respondsToSelector:@selector(objcui_updateWithProps:)]) {
-        [(id<ObjCUIViewPropsReceiver>)self objcui_updateWithProps:objcui_element.properties];
+        [(id<ObjCUIWidgetPropsReceiver>)self objcui_updateWithProps:objcui_element.properties];
     }
     // update style
     self.yoga.isEnabled = YES;
@@ -62,7 +62,9 @@ const char k_subviews;
     if (![oriElement isEqual:element]) {
         [self setObjcui_element:element];
     }
-    [element.holdElement.children enumerateObjectsUsingBlock:^(ObjCUIElement * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    // TODO: 1. get patches here
+    // TODO: 2. apply patches into current view
+    [element.children enumerateObjectsUsingBlock:^(ObjCUIElement * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UIView *subview = self.objcui_subviews.allObjects.count > idx ? [self.objcui_subviews.allObjects objectAtIndex:idx] : nil;
         // 这里其实会有一种情况，如果前后两个视图仅仅只是换了位置，有可能会引起重排p
         if (subview) {

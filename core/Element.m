@@ -145,8 +145,7 @@
 ObjCUIElement * ObjCCreateElement(Class elementType,
                                   id _Nullable props,
                                   NSArray * _Nullable children) {
-    ObjCUIElement *ele = [ObjCUIElement elementWithType:elementType];
+    ObjCUIElement *ele = [ObjCUIElement elementWithType:elementType children:children];
     ele.properties = props;
-    ele.children = children;
     return ele;
 }
